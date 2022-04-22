@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0"
+  },
+  "name": "PacketBot",
+  "version": "1.0.0",
+  "main": "PacketBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Packet",
+  "license": "MIT",
+  "description": "Packet Official Bot"
+}
