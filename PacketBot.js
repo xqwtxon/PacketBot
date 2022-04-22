@@ -71,7 +71,7 @@ client.on('messageCreate', message => {
 	// You can comment/remove/modify this if you want.
 	
 
-	switch(message.content){
+	switch(message.content.includes('.')){
 		case process.env.prefix:
 		console.log(chalk.yellowBright('[NOTICE]'), message.author.username + " they want to be retarded, because they input only (.), Did you think they have aids packet?");
 		message.reply('Did you think im idiot? STFU.');
@@ -128,14 +128,14 @@ client.on('messageCreate', message => {
 		console.log(chalk.cyanBright('[INFO]'), message.author.username + ": " + message.content);
 			message.reply({
 				embeds: [
-					embed.setColor('#ffffff').setTitle('NSFW Commands').setDescription('NSFW Pictures/GIFs\n**It can be only used only in NSFW Channels!**').setThumbnail(process.env.logo).addFields({ name: 'hentai', value: 'NSFW Henti Pictures/GIFs'},{ /* todo */ })
+					embed.setColor('#ffffff').setTitle('NSFW Commands').setDescription('NSFW Pictures/GIFs\n**It can be only used only in NSFW Channels!**').setThumbnail(process.env.logo).addFields({ name: 'hentai', value: 'NSFW Henti Pictures/GIFs'},/*{ todo }*/).setFooter({ text: 'PacketBot Development' })
 				]
 			})
 		case process.env.prefix + "devs":
 		console.log(chalk.cyanBright('[INFO]'), message.author.username + ": " + message.content);
 			message.reply({
 				embeds: [
-					embed.setColor('#ffffff').setTitle('Developers').setDescription('Packet Client is an MCBE Utility mod made by: Packet, Deq, Founder!\nPacket Client is a fork of the Horion Client!').setThumbnail(process.env.logo).addFields({ name: 'Packet#9609', value: 'Owner of Packet Client' },{ name: 'Founder#8300', value: 'Developer of Packet Client'},{ name: 'deq#5582', value: 'Developer of Packet Client'},{ name: 'xqwtxon#0001', value: 'Developer of PacketBot!'},{ name: 'Steve\'s Noob#2585', value: 'Original Horion Developer'},{ name: 'NRG#4200', value: 'Original Horion Developers'}).setFooter({ text: 'PacketBot Development' })
+					embed.setColor('#ffffff').setTitle('Developers').setDescription('Packet Client is an MCBE Utility mod!\nPacket Client is a fork of the Horion Client!').setThumbnail(process.env.logo).addFields({ name: 'Packet#9609', value: 'Owner of Packet Client' },{ name: 'Founder#8300', value: 'Developer of Packet Client'},{ name: 'deq#5582', value: 'Developer of Packet Client'},{ name: 'xqwtxon#0001', value: 'Developer of PacketBot!'},{ name: 'Steve\'s Noob#2585', value: 'Original Horion Developer'},{ name: 'NRG#4200', value: 'Original Horion Developers'}).setFooter({ text: 'PacketBot Development' })
 				] 
 			});
 			break;
@@ -151,13 +151,16 @@ client.on('messageCreate', message => {
 
 		// Staff commands
 		case ".ban":
+
 			break;
 		case "kick":
 			break;
 		case "mute":
 			break; 
+
+		// IF COMMAND WAS NOT FOUND -- im sure this bad idea 
 		default:
-			message.reply('Im not dumbass, that command doesnt exist!')
+			message.reply('Are u, nah. That command doesnt exist!')
 			break;
 	}
 
